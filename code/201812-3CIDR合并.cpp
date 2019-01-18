@@ -38,11 +38,11 @@ bool isChildCollection(IP&a,IP&b){//判断IP地址b是不是IP地址a的匹配�
             return false;
     return true;
 }
-void Merge1(list<IP>&ans){//第一步合并，移除匹配集是前一IP地址子集的IP地址
-    auto i=ans.begin(),j=ans.begin();
-    for(++j;j!=ans.end();){
+void Merge1(list<IP>&ipAddress){//第一步合并，移除匹配集是前一IP地址子集的IP地址
+    auto i=ipAddress.begin(),j=ipAddress.begin();
+    for(++j;j!=ipAddress.end();){
         if(isChildCollection(*i,*j)){
-            j=ans.erase(j);
+            j=ipAddress.erase(j);
         }else{
             ++i;
             ++j;
@@ -57,13 +57,13 @@ bool unionCollection(IP&a,IP&b){//判断IP地址a和b的匹配集的并集是否
             return false;
     return a.ip[a.length-1]!=b.ip[a.length-1];
 }
-void Merge2(list<IP>&ans){//第二步合并，同级合并
-    auto i=ans.begin(),j=ans.begin();
-    for(++j;j!=ans.end();){
+void Merge2(list<IP>&ipAddress){//第二步合并，同级合并
+    auto i=ipAddress.begin(),j=ipAddress.begin();
+    for(++j;j!=ipAddress.end();){
         if(unionCollection(*i,*j)){
-            j=ans.erase(j);
+            j=ipAddress.erase(j);
             --(*i).length;
-            if(i!=ans.begin()){
+            if(i!=ipAddress.begin()){
                 --i;
                 --j;
             }
@@ -76,23 +76,20 @@ void Merge2(list<IP>&ans){//第二步合并，同级合并
 int main(){
     int N;
     cin>>N;
-    vector<IP>ipAddress;
+    list<IP>ipAddress;
     while(N--){
         string input;
         cin>>input;
         ipAddress.push_back(stringToIp(input));
     }
-    sort(ipAddress.begin(),ipAddress.end(),[](IP&a,IP&b){//排序
+    ipAddress.sort([](const IP&a,const IP&b){
         if(a.ip!=b.ip)
             return a.ip<b.ip;
         return a.length<b.length;
     });
-    list<IP>ans;
-    for(auto&i:ipAddress)//将IP地址复制到list中
-        ans.push_back(i);
-    Merge1(ans);//第一步合并
-    Merge2(ans);//第二步合并
-    for(auto&i:ans){//输出IP地址
+    Merge1(ipAddress);//第一步合并
+    Merge2(ipAddress);//第二步合并
+    for(auto&i:ipAddress){//输出IP地址
         for(int j=0;j<4;++j){//求出每8位2进制字符串代表的整数并输出
             int k=0;
             for(int ii=0;ii<8;++ii)
