@@ -1,34 +1,39 @@
 #include<bits/stdc++.h>
 using namespace std;
-struct Edge{
-    int v,cost;
+struct Edge{//边的类
+    int v1,v2,cost;
+    Edge(int vv1,int vv2,int c):v1(vv1),v2(vv2),cost(c){}
     bool operator <(const Edge&e)const{//重载小于运算符
         return this->cost>e.cost;
     }
 };
-vector<Edge>graph[100005];//图
-int N,M,result=0;
-bool visit[100005];//当前顶点是否已访问过
+priority_queue<Edge>edges;
+int father[100005];//并查集
+int findFather(int x){//查找根结点并进行路径压缩
+    if(father[x]==x)
+        return x;
+    int temp=findFather(father[x]);
+    father[x]=temp;
+    return temp;
+}
 int main(){
-    scanf("%d%d",&N,&M);
-    while(M--){//读取数据，注意所给图为无向图
+    int n,m,ans=0;
+    scanf("%d%d",&n,&m);
+    iota(father,father+n+1,0);//初始化并查集
+    while(m--){
         int a,b,c;
         scanf("%d%d%d",&a,&b,&c);
-        graph[a].push_back({b,c});
-        graph[b].push_back({a,c});
+        edges.push(Edge(a,b,c));
     }
-    priority_queue<Edge>pq;//优先级队列
-    int current=1;//当前处理的顶点
-    while(current!=N){//当前处理的顶点不是N时继续循环
-        visit[current]=true;//当前顶点已访问
-        for(int i=0;i<graph[current].size();++i)//遍历当前顶点能到达的顶点
-            if(!visit[graph[current][i].v])//如果没有访问过
-                pq.push(graph[current][i]);//压入优先级队列
-        Edge e=pq.top();//获取队首元素
-        pq.pop();
-        current=e.v;//更新current为当前cost最小的顶点
-        result=max(result,e.cost);//更新result
+    while(findFather(1)!=findFather(n)){
+        Edge e=edges.top();
+        edges.pop();
+        int ua=findFather(e.v1),ub=findFather(e.v2);
+        if(ua!=ub){//边的两个端点不属于同一个集合
+            father[ua]=ub;
+            ans=max(ans,e.cost);//更新最长边
+        }
     }
-    printf("%d",result);
+    printf("%d",ans);
     return 0;
 }
