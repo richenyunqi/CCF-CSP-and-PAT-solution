@@ -31,7 +31,7 @@ int main(){
         int ua=findFather(e.v1),ub=findFather(e.v2);
         if(ua!=ub){//边的两个端点不属于同一个集合
             father[ua]=ub;
-            ans=max(ans,e.cost);//更新最长边
+            ans=e.cost;//更新最长边
         }
     }
     printf("%d",ans);
