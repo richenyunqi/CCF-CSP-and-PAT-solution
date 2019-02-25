@@ -1,44 +1,43 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int MAXV=10005;
-vector<int>graph[MAXV],reverseGraph[MAXV];//图G和置换图Gr
-bool visit[MAXV];
+const int MAX=10005;
+vector<int>graph[MAX];
+//index[i]表示i是第几个被访问的结点,lowLink[i]表示从i出发经有向边可到达的所有节点中最小的index,sccno[i]表示i所属的强连通分量的编号
+int index[MAX],lowLink[MAX],sccno[MAX],dfsNo=0,scc_cnt=0;
+int ans=0;//最终结果
 stack<int>s;
-int N,M,result=0;
-void DFS(int v){//对图G做深度优先遍历
-    visit[v]=true;
-    for(int i=0;i<graph[v].size();++i)
-        if(!visit[graph[v][i]])
-            DFS(graph[v][i]);
-    s.push(v);//压栈
-}
-void DFS(int v,int&num){//对图Gr做深度优先遍历
-    visit[v]=true;
-    ++num;//该连通分支下顶点个数+1
-    for(int i=0;i<reverseGraph[v].size();++i)
-        if(!visit[reverseGraph[v][i]])
-            DFS(reverseGraph[v][i],num);
+void DFS(int v){
+    index[v]=lowLink[v]=++dfsNo;
+    s.push(v);
+    for(int i:graph[v]){
+        if(index[i]==0){
+            DFS(i);
+            lowLink[v]=min(lowLink[v],lowLink[i]);
+        }else if(sccno[i]==0)
+            lowLink[v]=min(lowLink[v],index[i]);
+    }
+    if(lowLink[v]==index[v]){//是一个强连通分支的根结点
+        ++scc_cnt;
+        int t,num=0;//num表示该强连通分量中结点的个数
+        do{
+            t=s.top();
+            s.pop();
+            ++num;
+            sccno[t]=scc_cnt;
+        }while(t!=v);
+        ans+=(num-1)*num/2;//加上该强连通分量中的便利城市对个数
+    }
 }
 int main(){
-    scanf("%d%d",&N,&M);
-    while(M--){
-        int a,b;
+    int n,m,k,a,b;
+    scanf("%d%d",&n,&m);
+    while(m--){
         scanf("%d%d",&a,&b);
         graph[a].push_back(b);
-        reverseGraph[b].push_back(a);
     }
-    for(int i=1;i<=N;++i)
-        if(!visit[i])
+    for(int i=1;i<=n;++i)
+        if(index[i]==0)
             DFS(i);
-    fill(visit+1,visit+N+1,false);
-    while(!s.empty()){
-        int t=s.top(),num=0;
-        s.pop();
-        if(!visit[t]){
-            DFS(t,num);
-            result+=num*(num-1)/2;
-        }
-    }
-    printf("%d",result);
+    printf("%d",ans);
     return 0;
 }
