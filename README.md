@@ -11,3 +11,4 @@ CCF CSP题解的仓库我会一直维护，每次考试后都会尽快更新新�
 
  - 感谢[夜行少女](https://me.csdn.net/qq_37967797)对[201812-3CIDR合并](https://blog.csdn.net/richenyunqi/article/details/86477396)代码的改进
  - 感谢**张建勋**指出[201612-1中间数](https://blog.csdn.net/richenyunqi/article/details/79640831)中存在的bug并提供相应的出现错误的测试数据
+ - 感谢[Highlight_Jin](https://me.csdn.net/Highlight_Jin)评论区在[CCF认证201512-4送货（100分）](https://blog.csdn.net/richenyunqi/article/details/80382450#commentsedit)的提醒
