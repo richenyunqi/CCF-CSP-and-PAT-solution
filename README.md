@@ -9,7 +9,10 @@ CCF CSP题解的仓库我会一直维护，每次考试后都会尽快更新新�
 如果您觉得我上传的代码有问题，欢迎通过提issue方式给我发送bug report，最好附上您认为的正确的题解代码哦，ღ( ´･ᴗ･\` )比心\~~
 
 ## 鸣谢
-
+### 代码改进
  - 感谢[夜行少女](https://me.csdn.net/qq_37967797)对[201812-3CIDR合并](https://blog.csdn.net/richenyunqi/article/details/86477396)代码的改进
+ - 感谢[Highlight_Jin](https://me.csdn.net/Highlight_Jin)对[CCF认证201512-4送货（100分）](https://blog.csdn.net/richenyunqi/article/details/80382450)代码的改进
+
+### bug提示
  - 感谢**张建勋**指出[201612-1中间数](https://blog.csdn.net/richenyunqi/article/details/79640831)中存在的bug并提供相应的出现错误的测试数据
- - 感谢[Highlight_Jin](https://me.csdn.net/Highlight_Jin)在[CCF认证201512-4送货（100分）](https://blog.csdn.net/richenyunqi/article/details/80382450#commentsedit)评论区的提醒
+ -  - 感谢[星辰浩宇](https://me.csdn.net/amf12345)指出[201803-3URL映射](https://blog.csdn.net/richenyunqi/article/details/85260248)中存在的bug并提供相应的出现错误的测试数据
