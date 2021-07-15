@@ -24,7 +24,7 @@ int main() {
     }
     d = count(f.begin(), f.end(), true);  //计算有多少棵果树有苹果掉落
     for (gg i = 0; i < ni; ++i) {  //统计连续3棵苹果树有苹果掉落的组数
-        if (f[i] && f[(i + 1) % ni] && f[(i + 2) % ni])
+        if (f[i] and f[(i + 1) % ni] and f[(i + 2) % ni])
             ++e;
     }
     cout << t << " " << d << " " << e;
