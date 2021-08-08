@@ -2,13 +2,13 @@
 
 # CCF CSP 考试和 PAT 顶级甲级乙级考试题解
 
-<img src="https://z3.ax1x.com/2021/06/17/2zNIII.md.jpg" width = "447" height = "300" alt="cover" hspace="20">
+<img src="https://z3.ax1x.com/2021/06/17/2zNIII.md.jpg">
 
-本仓库是书籍《算法详解（C++11 语言描述）》的配套仓库，主要负责更新 CCF CSP 和 PAT 顶级甲级乙级题解代码。书籍《算法详解（C++11 语言描述）》已在各大电商平台上架，搜索书名即可找到对应商品。由于 CCF CSP 和 PAT 考试都已支持 C++14 标准，本仓库的所有题解代码均将基于 C++14 语法编写。在编译本仓库的代码之前，最好选择支持 C++14 的编译环境。
+本仓库是书籍《算法详解（C++11 语言描述）》的配套仓库，主要负责更新 CCF CSP 和 PAT 顶级甲级乙级题解代码。书籍《算法详解（C++11 语言描述）》已在各大电商平台上架，搜索书名即可找到对应商品。关于书籍的勘误信息可参考[书籍勘误](书籍勘误.md)
 
-有关 CCF CSP 考试的简介可参考[CCF CSP 认证考试在线评测系统](https://www.cnblogs.com/richenyunqi/p/14892974.html)，有关 PAT 考试的简介可参考[浙江大学计算机程序设计能力考试（PAT）简介](https://www.cnblogs.com/richenyunqi/p/14892982.html)。本仓库的代码会一直维护，每次考试后都会尽快更新新的题解，希望这一工作能够给予算法初学者们一定的帮助。
+有关 CCF CSP 考试的简介可参考[CCF CSP 认证考试在线评测系统](https://www.cnblogs.com/richenyunqi/p/14892974.html)，有关 PAT 考试的简介可参考[浙江大学计算机程序设计能力考试（PAT）简介](https://www.cnblogs.com/richenyunqi/p/14892982.html)。本仓库的代码会一直维护，每次考试后都会尽快更新新的题解，希望这一工作能够给予算法初学者们一定的帮助。由于 CCF CSP 和 PAT 考试都已支持 C++14 标准，**本仓库的所有题解代码均将基于 C++14 语法编写**。在编译本仓库的代码之前，最好选择支持 C++14 的编译环境。
 
-如果发现本仓库的代码有问题，欢迎通过提 issue 方式发送 bug report，最好附上错误的输入数据或正确的题解代码。
+如果发现本仓库的代码有问题，欢迎通过提 issue 的方式给予说明，最好附上错误的输入数据或正确的题解代码。
 
 ## 题解目录
 
@@ -22,9 +22,8 @@
 
 1. 为了更好地浏览本仓库，建议使用 `chrome` 或新版 `Edge` 浏览器并安装以下插件（这里提供的插件链接需要科学上网才能打开）。科学上网的方法有很多，例如通过安装[蓝灯](https://github.com/ainiyiwan/forum)可以正常访问谷歌相关网站。
 
-   1. [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc)：对打开的 Github 代码仓库，像 IDE 一样提供项目目录自动生成一个仓库目录树侧边栏，通过这个插件你可以很方便地打开这个仓库内的任何一个文件。
+   1. [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc)：对打开的 Github 代码仓库，可以像 IDE 一样提供项目目录并自动生成一个仓库目录树侧边栏，通过这个插件你可以很方便地打开这个仓库内的任何一个文件。
    2. [MathJax Plugin for Github](https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima)：对`github`上`markdown`文本的`latex`语法进行渲染。
-   3. [GayHub](https://chrome.google.com/webstore/detail/gayhub/mdcffelghikdiafnfodjlgllenhlnejl)：为 Github 上的 markdown 文本自动生成目录。该插件似乎还拥有类似于 Octotree 生成目录树的功能，但是目前该功能已失效，而作者至今尚未修复。
 
 2. 建议安装 VSCode 并进行相应配置，来编写运行 C++代码。VSCode 是一款现代化的的编辑器，相比于 vc++、CodeBlocks、Dev c++等等老旧的 IDE，VSCode 提供的功能更加强大；相比于 Visual Studio，VSCode 更加小巧。有关 VSCode 的安装以及 C/C++环境的配置可以参考[挑把趁手的兵器——VSCode 配置 C/C++学习环境（小白向）](https://zhuanlan.zhihu.com/p/147366852)。
 3. 可以利用 windows 批处理文件比较程序输出和样例输出或者进行程序对拍，可以参考[用 VSCode 终端实现重定向比较程序输出和正确输出](https://www.cnblogs.com/richenyunqi/p/14894172.html)。
