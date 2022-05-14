@@ -48,6 +48,7 @@
 - 感谢[chocolate-emperor](https://github.com/chocolate-emperor)对`CCF 认证 201512-2 消除类游戏`代码错误的提醒
 - 感谢[田奕轩](https://me.csdn.net/qq_45057634)对`CCF 认证 20161202-工资计算`代码错误的提醒
 - 感谢[徐嘉诚](https://github.com/xiaobanni)指出`CCF 认证 201403-4 无线网络`中存在的 bug 并提供相应的出现错误的测试数据
+- 感谢[promise6512](https://github.com/promise6512)指出`pat 甲级 1104. Sum of Number Segments、乙级 1049. 数列的片段和`中存在的 bug
 
 ### 代码补充
 
