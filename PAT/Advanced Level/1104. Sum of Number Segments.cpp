@@ -6,11 +6,12 @@ int main() {
     cin.tie(0);
     gg ni;
     cin >> ni;
-    double s = 0.0, ai;
+    gg s = 0;
+    double ai;
     for (gg i = 0; i < ni; ++i) {
         cin >> ai;
-        s += (i + 1) * (ni - i) * ai;
+        s += (gg)(ai * 1000) * (i + 1) * (ni - i);
     }
-    cout << fixed << setprecision(2) << s;
+    cout << fixed << setprecision(2) << (s / 1000.0);
     return 0;
 }
